@@ -1,0 +1,186 @@
+:root {
+  --primary-color: #242424;   /* Colore principale */
+  --special-text-color: #2f355c;    /* Colore del testo iniziale nella parte alta del sito */
+  --secondary-color: #e7472b; /* Colore di contrasto principale (h1, titoli, bottoni, ecc.) */
+  --font-family-base: "Poppins", sans-serif;
+
+
+  --bg-color: #f7f5f1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+}
+
+.homepage {
+    background-color: var(--bg-color)
+}
+
+.main-title-component-custom h1 {
+    font-size: 28px;
+}
+
+/* -----------> SEZIONE HEADER <----------- */
+.header{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header-logo {
+    font-size: 46px;
+}
+.header-logo:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+/* -----------> SEZIONE SITO  <----------- */
+h1 {
+    color: var(--special-text-color);
+    font-weight: bolder;
+}
+
+h2, a:hover {
+    color: var(--secondary-color);
+}
+h4 {
+    color: var(--secondary-color);
+    font-size: large;
+    padding: 4px;
+}
+
+.fs-custom {
+    font-size: 40px;
+}
+/* -----------> SEZIONE GET IN TOUCH - BUTTON  <----------- */
+.button-custom {
+  width: 300px;
+  height: 46px;
+  position: relative;
+  background-color: var(--special-text-color);
+  background-image: linear-gradient(to right, var(--secondary-color) 50%, #2f355c 50%);
+  background-size: 200% 100%; 
+  background-position: right bottom;
+  color: white;
+  border: none; 
+  padding: 10px 20px;
+  cursor: pointer; 
+  transition: background-position 0.2s ease-in-out;
+}
+@media (min-width: 1000px) {
+    .button-custom {
+        margin-top: 30px;
+}
+}
+
+
+.button-custom:hover {
+  background-position: left bottom;
+  color: white;
+}
+
+/* -----------> SEZIONE GET IN TOUCH - IMAGE <----------- */
+.image-custom {
+    width: 300px;
+    height: auto;
+    border-radius: 100px;
+}
+/* -----------> SEZIONE GET IN TOUCH - PARAGRAFO <----------- */
+@media (min-width: 1000px) {
+    .paragraph-custom {
+        width: 500px;
+}
+}
+
+/* -----------> SEZIONE SKILLS <----------- */
+.skills-custom {
+    height: auto;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-image-direction {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.single-skill-custom {
+    width: 56px;
+    height: 56px;
+    margin: 6px;
+}
+.single-skill-custom-typescript {
+    width: 76px;
+    height: 56px;
+    margin: 6px;
+    border-radius: 30px;
+}
+
+.single-skill-custom-bootstrap {
+    width: 56px;
+    height: 56px;
+    margin: 6px;
+    border-radius: 6px;
+}
+
+/* -----------> SEZIONE CARD <----------- */
+.card-project {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 12px;
+    height: auto;
+}
+
+@media (max-width: 799px) {
+    .card-project {
+        width: auto;
+        padding: 40px;
+        margin-left: 22px;
+        margin-right: 22px;
+    }
+}
+@media (min-width: 800px) {
+    .card-project {
+        width: 320px;
+    }
+}
+
+.image-gallery img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: auto;
+}
+
+.card-technologies-paragraph {
+    color: rgb(172, 171, 171);
+}
+
+.project-link {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.single-project-link {
+    margin-left: 12px;
+    margin-right: 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+/* Stile per le immagini nella galleria */
+.image-gallery img {
+  width: 100%; /* Imposta la larghezza al 100% del contenitore */
+  height: auto; /* Mantieni l'aspetto proporzionale */
+  max-height: 400px; /* Imposta un'altezza massima uniforme */
+  object-fit: cover; /* Assicura che l'immagine riempia l'area senza distorsioni */
+  display: block; /* Rimuove lo spazio extra sotto le immagini */
+}

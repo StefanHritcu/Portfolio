@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="relative overflow-hidden bg-primary-bg min-w-[200px] h-[360px] md:h-[460px] sm:mx-10 md:mx-12 flex flex-col justify-end z-10">
+      <div className="relative overflow-hidden bg-primary-bg min-w-[200px] h-[360px] md:h-[460px] sm:mx-10 md:mx-12 lg:mx-36 flex flex-col justify-end z-10">
         <div className="bg-primary-bg w-auto h-[360px] mb-8 flex flex-col justify-end z-20">
           <motion.div
             initial="hidden"
@@ -56,6 +56,7 @@ export default function HomePage() {
               animate="visible"
               variants={cloudVariants}
               transition={{ duration: 0.8 }}
+              className="lg:mr-20 cloud1:mr-32 cloud2:mr-40 cloud3:mr-70"
             >
               <img
                 className="hidden sm:block absolute w-[170px] h-auto left-3/4 transform -translate-x-1/2 -top-20"

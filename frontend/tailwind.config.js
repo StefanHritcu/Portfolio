@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         "primary-bg": "#1a1a1a",
-        "border-padding": "#252525",
+        "border-padding": "#2b2b2b",
         "text-primary": "#ffffff",
       },
       screens: {

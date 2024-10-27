@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="relative overflow-hidden bg-primary-bg min-w-[200px] h-[360px] md:h-[460px] sm:mx-10 md:mx-12 lg:mx-36 flex flex-col justify-end z-10">
+      <div className="relative overflow-hidden bg-primary-bg min-w-[200px] h-[350px] md:h-[450px] mx-8 sm:mx-10 md:mx-12 lg:mx-36 flex flex-col justify-end z-10 mt-4">
         <div className="bg-primary-bg w-auto h-[360px] mb-8 flex flex-col justify-end z-20">
           <motion.div
             initial="hidden"
@@ -67,6 +67,7 @@ export default function HomePage() {
                 {text.split("").map((char, index) => (
                   <motion.span
                     key={index}
+                    className="font-poppins"
                     initial={{ opacity: 0, y: 10 }} // Inizialmente invisibile e leggermente spostato in basso
                     animate={{ opacity: 1, y: 0 }} // Diventa visibile e torna in posizione
                     transition={{ duration: 0.002 }} // Ritardo basato sull'indice della lettera
@@ -78,7 +79,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
 
-          <h1 className="absolute mx-auto bg-transparent bottom-0 text-[46px] md3:pb-1 extra-small:text-[60px] md:text-[100px] md3:text-[120px] w-full text-center px-4 text-text-primary bg-primary-bg z-40">
+          <h1 className="absolute mx-auto font-poppins bg-transparent bottom-0 text-[46px] md3:pb-1 extra-small:text-[60px] md:text-[100px] md3:text-[120px] w-full text-center px-4 text-text-primary bg-primary-bg z-40">
             Stefan Hritcu
           </h1>
         </div>
@@ -92,6 +93,9 @@ export default function HomePage() {
           transition={{ type: "spring", stiffness: 120 }}
         ></motion.div>
       </div>
+      <h2 className="text-2xl text-secondary-color-text font-lighter sm:ml-10 md:ml-12 lg:ml-36 font-poppins">
+        Frontend Developer / Full-Stack Skills
+      </h2>
     </>
   );
 }

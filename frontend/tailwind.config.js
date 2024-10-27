@@ -7,6 +7,7 @@ export default {
         "primary-bg": "#1a1a1a",
         "border-padding": "#2b2b2b",
         "text-primary": "#ffffff",
+        "secondary-color-text": "#d1cfcf",
       },
       screens: {
         "extra-small": "400px",

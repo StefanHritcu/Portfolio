@@ -36,8 +36,8 @@ function MainComponent() {
             onMouseLeave={() => setIsProjectHovered(false)}
             className={`absolute rounded-r-md bg-border-padding h-[60px] z-10 top-6 overflow-hidden transition-all duration-300 ${
               isProjectHovered
-                ? "left-[80px] md:left-[120px] w-[120px]"
-                : "left-[30px] md:left-[40px] w-[0px]"
+                ? "left-[80px] w-[120px] md:left-[100px] md:w-[130px] lg:left-[200px] lg:w-[150px]"
+                : "left-[30px] w-[0px] md:left-[80px] lg:left-[180px]"
             }`}
           >
             <a href="#TODO" className="text-white text-center no-underline">

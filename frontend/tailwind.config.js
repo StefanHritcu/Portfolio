@@ -10,7 +10,8 @@ export default {
         "secondary-color-text": "#d1cfcf",
       },
       screens: {
-        "extra-small": "400px",
+        verySmall: "340px",
+        extraSmall: "400px",
         sm: "640px",
         md: "767px",
         md2: "818px",

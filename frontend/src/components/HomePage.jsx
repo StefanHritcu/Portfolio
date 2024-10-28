@@ -2,6 +2,7 @@ import ProfileImage from "./../assets/imgPortfolio.png";
 import { motion } from "framer-motion";
 import CloudeBobbles from "./../assets/cloud-bobbles.png";
 import { useEffect, useState } from "react";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 export default function HomePage() {
   const [text, setText] = useState("");
@@ -34,7 +35,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="relative overflow-hidden bg-primary-bg min-w-[200px] h-[350px] md:h-[450px] mx-8 sm:mx-10 md:mx-12 lg:mx-36 flex flex-col justify-end z-10 mt-4">
+      <div className="relative overflow-hidden bg-primary-bg min-w-[200px] h-[350px] md:h-[450px] mx-8 sm:mx-10 md:mx-12 lg:mx-36 flex flex-col justify-end z-10 ">
         <div className="bg-primary-bg w-auto h-[360px] mb-8 flex flex-col justify-end z-20">
           <motion.div
             initial="hidden"
@@ -79,7 +80,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
 
-          <h1 className="absolute mx-auto font-poppins bg-transparent bottom-0 text-[46px] md3:pb-1 extra-small:text-[60px] md:text-[100px] md3:text-[120px] w-full text-center px-4 text-text-primary bg-primary-bg z-40">
+          <h1 className="absolute mx-auto font-poppins bg-transparent bottom-1 extraSmall:bottom-0  text-[34px] verySmall:text-[40px] extraSmall:text-[46px] md3:pb-1 extra-small:text-[60px] md:text-[100px] md3:text-[120px] w-full text-center px-4 text-text-primary bg-primary-bg z-40">
             Stefan Hritcu
           </h1>
         </div>
@@ -93,21 +94,30 @@ export default function HomePage() {
           transition={{ type: "spring", stiffness: 120 }}
         ></motion.div>
       </div>
-      <motion.div
-        className="py-4 bg-primary-bg"
-        initial={{ y: 60 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1.2 }}
-      >
-        <motion.h2
-          className="text-2xl text-secondary-color-text font-lighter mx-8 sm:mx-10 md:mx-12 lg:mx-36 font-poppins"
-          initial={{ opacity: 0 }} //0 is not visible
-          animate={{ opacity: 1 }} //1 is visible
-          transition={{ duration: 4.2 }}
+      <section className="flex justify-around items-center">
+        <motion.div
+          className="py-4 bg-primary-bg"
+          initial={{ y: 60 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1.2 }}
         >
-          Frontend Developer / Full-Stack Skills
-        </motion.h2>
-      </motion.div>
+          <motion.h2
+            className="text-2xl text-secondary-color-text font-lighter mx-8 sm:mx-10 md:mx-12 lg:mx-36 font-poppins"
+            initial={{ opacity: 0 }} //0 is not visible
+            animate={{ opacity: 1 }} //1 is visible
+            transition={{ duration: 4.2 }}
+          >
+            Frontend Developer / Full-Stack Skills
+          </motion.h2>
+        </motion.div>
+
+        <div className="rounded-2xl border-secondary-color-text border-2 hover:border-red-400 cursor-pointer hover:scale-105 transform-transition duration-300">
+          <div className="px-4 pt-[12px] flex items-center justify-center">
+            <p className="text-secondary-color-text">Get in touch</p>
+            <MdOutlineArrowRightAlt className="text-secondary-color-text ml-2 text-2xl mb-3" />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

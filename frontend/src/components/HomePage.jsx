@@ -24,12 +24,12 @@ export default function HomePage() {
           return fullText.slice(0, prev.length + 1);
         } else {
           clearInterval(interval);
-          return prev; // stop updating when done
+          return prev;
         }
       });
-    }, 100); // ogni decimo di secondo
+    }, 100);
 
-    return () => clearInterval(interval); // pulizia dell'intervallo
+    return () => clearInterval(interval);
   }, [fullText]);
 
   return (
@@ -93,9 +93,21 @@ export default function HomePage() {
           transition={{ type: "spring", stiffness: 120 }}
         ></motion.div>
       </div>
-      <h2 className="text-2xl text-secondary-color-text font-lighter sm:ml-10 md:ml-12 lg:ml-36 font-poppins">
-        Frontend Developer / Full-Stack Skills
-      </h2>
+      <motion.div
+        className="py-4 bg-primary-bg"
+        initial={{ y: 60 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1.2 }}
+      >
+        <motion.h2
+          className="text-2xl text-secondary-color-text font-lighter mx-8 sm:mx-10 md:mx-12 lg:mx-36 font-poppins"
+          initial={{ opacity: 0 }} //0 is not visible
+          animate={{ opacity: 1 }} //1 is visible
+          transition={{ duration: 4.2 }}
+        >
+          Frontend Developer / Full-Stack Skills
+        </motion.h2>
+      </motion.div>
     </>
   );
 }

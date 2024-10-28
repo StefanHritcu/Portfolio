@@ -2,6 +2,7 @@ import HomePage from "./components/HomePage";
 import ProjectImage from "./assets/imgPortfolio.png";
 import { useState } from "react";
 import { FaMessage } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 function MainComponent() {
   const [isProjectHovered, setIsProjectHovered] = useState(false);
@@ -9,7 +10,12 @@ function MainComponent() {
     <>
       <div className="relative z-50 h-screen pb-32">
         {/* START RESPONSIVE HEADER */}
-        <header className="relative flex items-center justify-between">
+        <motion.header
+          className="relative flex items-center justify-between"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           {/* PROJECTS */}
           <div
             onMouseEnter={() => setIsProjectHovered(true)}
@@ -46,7 +52,7 @@ function MainComponent() {
               <FaMessage className="text-white" />
             </div>
           </div>
-        </header>
+        </motion.header>
         {/* END RESPONSIVE HEADER */}
 
         <HomePage />

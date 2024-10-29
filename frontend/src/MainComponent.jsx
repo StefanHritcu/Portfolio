@@ -4,11 +4,11 @@ import { useState } from "react";
 import { FaMessage } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-function MainComponent() {
+function MainComponent({ isScrolledBis200px }) {
   const [isProjectHovered, setIsProjectHovered] = useState(false);
   return (
     <>
-      <div className="relative z-50 h-screen pb-32">
+      <div className="relative z-50 h-auto pb-32">
         {/* START RESPONSIVE HEADER */}
         <motion.header
           className="relative flex items-center justify-between"
@@ -55,7 +55,7 @@ function MainComponent() {
         </motion.header>
         {/* END RESPONSIVE HEADER */}
 
-        <HomePage />
+        <HomePage isScrolledBis200px={isScrolledBis200px} />
       </div>
     </>
   );

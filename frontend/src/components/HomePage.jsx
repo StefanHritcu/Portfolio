@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import CloudeBobbles from "./../assets/cloud-bobbles.png";
 import { useEffect, useState } from "react";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import ScrollIndicator from "./ScrollIndicator";
 
-export default function HomePage() {
+export default function HomePage({ isScrolledBis200px }) {
   const [text, setText] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
 
   const fullText = "Hello👋, Welcome to my personal Portfolio 🙂";
 
@@ -32,6 +34,14 @@ export default function HomePage() {
 
     return () => clearInterval(interval);
   }, [fullText]);
+
+  useEffect(() => {
+    if (isScrolledBis200px) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [isScrolledBis200px]);
 
   return (
     <>
@@ -94,30 +104,55 @@ export default function HomePage() {
           transition={{ type: "spring", stiffness: 120 }}
         ></motion.div>
       </div>
-      <section className="flex justify-around items-center">
-        <motion.div
-          className="py-4 bg-primary-bg"
-          initial={{ y: 60 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1.2 }}
-        >
+      <motion.section
+        initial={{ y: 60 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1.2 }}
+        className="md:flex md:justify-between md:items-center bg-primary-bg mb-6"
+      >
+        <div className="py-4 bg-primary-bg ml-3">
           <motion.h2
-            className="text-2xl text-secondary-color-text font-lighter mx-8 sm:mx-10 md:mx-12 lg:mx-36 font-poppins"
+            className="text-sm verySmall:text-lg sm:text-xl text-secondary-color-text font-lighter ml-8 verySmall:ml-6 extraSmall:ml-10 lg:ml-32 font-poppins"
             initial={{ opacity: 0 }} //0 is not visible
             animate={{ opacity: 1 }} //1 is visible
             transition={{ duration: 4.2 }}
           >
             Frontend Developer / Full-Stack Skills
           </motion.h2>
-        </motion.div>
+        </div>
 
-        <div className="rounded-2xl border-secondary-color-text border-2 hover:border-red-400 cursor-pointer hover:scale-105 transform-transition duration-300">
+        {/* GET IN TOUCH */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 4.2 }}
+          className="hidden md:block rounded-2xl border-secondary-color-text border-2 mr-12 lg:mr-36 hover:border-red-400 cursor-pointer hover:scale-105 transform-transition duration-300"
+        >
           <div className="px-4 pt-[12px] flex items-center justify-center">
-            <p className="text-secondary-color-text">Get in touch</p>
+            <p className="text-secondary-color-text text-sm">Get in touch</p>
             <MdOutlineArrowRightAlt className="text-secondary-color-text ml-2 text-2xl mb-3" />
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
+      {isVisible ? (
+        <motion.div
+          className="mb-4 absolute left-2/4 transform -translate-x-1/2"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <ScrollIndicator />
+        </motion.div>
+      ) : (
+        <motion.div
+          className="mb-4 absolute left-2/4 transform -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <ScrollIndicator />
+        </motion.div>
+      )}
     </>
   );
 }

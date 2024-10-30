@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaMessage } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-function MainComponent({ isScrolledBis200px }) {
+function MainComponent({ isScrolledBis200px, isMounted }) {
   const [isProjectHovered, setIsProjectHovered] = useState(false);
   return (
     <>
@@ -55,7 +55,10 @@ function MainComponent({ isScrolledBis200px }) {
         </motion.header>
         {/* END RESPONSIVE HEADER */}
 
-        <HomePage isScrolledBis200px={isScrolledBis200px} />
+        <HomePage
+          isScrolledBis200px={isScrolledBis200px}
+          isMounted={isMounted}
+        />
       </div>
     </>
   );

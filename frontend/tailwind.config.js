@@ -6,6 +6,7 @@ export default {
       colors: {
         "primary-bg": "#1a1a1a",
         "border-padding": "#2b2b2b",
+        "second-border-padding": "#1d1d1d",
         "text-primary": "#ffffff",
         "secondary-color-text": "#d1cfcf",
       },

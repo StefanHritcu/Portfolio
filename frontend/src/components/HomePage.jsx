@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ScrollIndicator from "./ScrollIndicator";
 
-export default function HomePage({ isScrolledBis200px }) {
+export default function HomePage({ isScrolledBis200px, isMounted }) {
   const [text, setText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
 
@@ -117,7 +117,10 @@ export default function HomePage({ isScrolledBis200px }) {
             animate={{ opacity: 1 }} //1 is visible
             transition={{ duration: 4.2 }}
           >
-            Frontend Developer / Full-Stack Skills
+            Frontend Developer /{" "}
+            <span className="text-[10px] verySmall:text-[12px] sm:text-[14px]">
+              Full-Stack Skills
+            </span>
           </motion.h2>
         </div>
 
@@ -141,7 +144,7 @@ export default function HomePage({ isScrolledBis200px }) {
           animate={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <ScrollIndicator />
+          <ScrollIndicator isMounted={isMounted} />
         </motion.div>
       ) : (
         <motion.div

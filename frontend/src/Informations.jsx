@@ -1,10 +1,13 @@
 import InfoCard from "./components/InfoCard";
 
-function Informations() {
+function Informations({ isScrolledBis500px, isScrolledBis200px }) {
   return (
     <>
       <div>
-        <InfoCard />
+        <InfoCard
+          isScrolledBis500px={isScrolledBis500px}
+          isScrolledBis200px={isScrolledBis200px}
+        />
       </div>
     </>
   );

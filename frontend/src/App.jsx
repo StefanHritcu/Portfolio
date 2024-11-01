@@ -6,17 +6,17 @@ import Informations from "./Informations";
 function App() {
   const [isScrolledBis200px, setIsScrolledBis200px] = useState(false);
   const [isScrolledBis500px, setIsScrolledBis500px] = useState(false);
+  const [skillsScrolled600px, setskillsScrolled600px] = useState(false);
+  const [skillsScrolled700px, setskillsScrolled700px] = useState(false);
 
   const [isMounted, setIsMounted] = useState(false);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-
-    // Controllo per 200px
-    setIsScrolledBis200px(scrollPosition > 280);
-
-    // Controllo per 500px
-    setIsScrolledBis500px(scrollPosition > 280);
+    setIsScrolledBis200px(scrollPosition > 320);
+    setIsScrolledBis500px(scrollPosition > 320);
+    setskillsScrolled600px(scrollPosition > 800);
+    setskillsScrolled700px(scrollPosition > 650);
   };
   useEffect(() => {
     {
@@ -41,17 +41,27 @@ function App() {
   useEffect(() => {
     console.log("Scrolled 500px status:", isScrolledBis500px);
   }, [isScrolledBis500px]);
+
+  useEffect(() => {
+    console.log("Scrolled 600px status:", skillsScrolled600px);
+  }, [skillsScrolled600px]);
+
+  useEffect(() => {
+    console.log("Scrolled 700px status:", skillsScrolled700px);
+  }, [skillsScrolled700px]);
+
   return (
     <>
-      <div className="bg-primary-bg h-[2000px]">
+      <div className="bg-primary-bg min-h-[2000px] h-auto">
         <MainComponent
           isScrolledBis200px={isScrolledBis200px}
           isMounted={isMounted}
-          c
         />
         <Informations
           isScrolledBis500px={isScrolledBis500px}
           isScrolledBis200px={isScrolledBis200px}
+          skillsScrolled600px={skillsScrolled600px}
+          skillsScrolled700px={skillsScrolled700px}
         />
       </div>
     </>

@@ -10,9 +10,18 @@ function InfoCard({ isScrolledBis500px, isScrolledBis200px }) {
   }, [isScrolledBis500px]);
 
   return (
-    <div className="mx-8 sm:mx-10 md:mx-12 lg:mx-36 bg-second-border-padding rounded-sm lg:flex h-auto overflow-hidden lg:justify-around lg:items-center lg:text-center">
+    <motion.div
+      initial={{ x: "-100%", opacity: 0 }}
+      animate={{
+        x: scrolled500px ? 0 : "-100%",
+        opacity: scrolled500px ? 1 : 0,
+      }}
+      transition={{ duration: 1 }}
+      exit={{ x: "-100%", transition: { duration: 1 } }}
+      className="mx-8 sm:mx-10 md:mx-12 lg:mx-36 bg-second-border-padding rounded-sm lg:flex h-auto overflow-hidden lg:justify-around lg:items-center lg:text-center"
+    >
       {/* Animazione per ogni riga del titolo */}
-      <div className="lg:w-1/2 p-4 text-text-primary text-2xl verySmall:text-3xl sm:text- lg:text-[52px] lg:font-medium lg:leading-tight">
+      <div className="lg:w-1/2 p-4 text-text-primary text-2xl verySmall:text-3xl lg:text-[52px] lg:font-medium lg:leading-tight">
         <motion.div
           initial={{ x: "-100%" }}
           animate={{
@@ -69,7 +78,7 @@ function InfoCard({ isScrolledBis500px, isScrolledBis200px }) {
         projects, collaborated with other developers, and contributed to
         building a website for a neighborhood council.
       </motion.p>
-    </div>
+    </motion.div>
   );
 }
 

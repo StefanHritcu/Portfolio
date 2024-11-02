@@ -1,15 +1,34 @@
 import SkillsComponent from "./components/SkillsComponent";
+
+import HTML from "./assets/icons/html.svg";
+import SEO from "./assets/icons/seo.svg";
+import CSS from "./assets/icons/css.svg";
+import TAILWINDCSS from "./assets/icons/tailwindcss.svg";
+import JAVASCRIPT from "./assets/icons/javascript.svg";
+import REACT from "./assets/icons/react.svg";
+import TYPESCRIPT from "./assets/icons/typescript.svg";
+import REDUX from "./assets/icons/redux.svg";
+import GIT from "./assets/icons/git.svg";
+import GITHUB from "./assets/icons/github.svg";
+import NETLIFY from "./assets/icons/netlify.svg";
+
 import htmlCloud from "./assets/cloud-bobbles.png";
 import profile from "./assets/imgPortfolio.png";
 
 function Skills({ skillsScrolled600px, skillsScrolled700px }) {
   const basicSkills = {
     skills: [
-      { name: "HTML", image: htmlCloud },
-      { name: "Base", image: profile },
-      { name: "CSS", image: htmlCloud },
-      { name: "JavaScript", image: profile },
-      { name: "React", image: htmlCloud },
+      { name: "HTML", image: HTML, title: "HTML" },
+      { name: "SEO", image: SEO },
+      { name: "CSS", image: CSS, title: "CSS" },
+      { name: "TAILWINDCSS", image: TAILWINDCSS, title: "TAILWINDCSS" },
+      { name: "JAVASCIPT", image: JAVASCRIPT, title: "JAVASCRIPT" },
+      { name: "REACT", image: REACT, title: "REACT" },
+      { name: "TYPESCRIPT", image: TYPESCRIPT, title: "TYPESCRIPT" },
+      { name: "REDUX", image: REDUX, title: "REDUX" },
+      { name: "GIT", image: GIT, title: "GIT" },
+      { name: "GITHUB", image: GITHUB, title: "GITHUB" },
+      { name: "NETLIFY", image: NETLIFY, title: "NETLIFY" },
     ],
     reverse: false,
   };

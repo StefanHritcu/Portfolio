@@ -43,7 +43,12 @@ function SkillsComponent({
             className="flex items-center justify-center w-1/3 sm:w-1/4 lg:w-1/6 p-2"
             key={index}
           >
-            <img className="w-12 h-auto" src={skill.image} alt={skill.name} />
+            <img
+              className="w-12 h-auto cursor-pointer"
+              title={skill.title}
+              src={skill.image}
+              alt={skill.name}
+            />
           </nav>
         ))}
       </div>

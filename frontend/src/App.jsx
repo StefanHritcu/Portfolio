@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./index.css";
 import MainComponent from "./MainComponent";
 import Informations from "./Informations";
+import LastestWork from "./LastestWork";
 
 function App() {
   const [isScrolledBis200px, setIsScrolledBis200px] = useState(false);
@@ -63,6 +64,7 @@ function App() {
           skillsScrolled600px={skillsScrolled600px}
           skillsScrolled700px={skillsScrolled700px}
         />
+        <LastestWork />
       </div>
     </>
   );

@@ -11,9 +11,12 @@ import REDUX from "./assets/icons/redux.svg";
 import GIT from "./assets/icons/git.svg";
 import GITHUB from "./assets/icons/github.svg";
 import NETLIFY from "./assets/icons/netlify.svg";
-
-import htmlCloud from "./assets/cloud-bobbles.png";
-import profile from "./assets/imgPortfolio.png";
+import SASS from "./assets/icons/sass.svg";
+import NEXT from "./assets/icons/next.svg";
+import ANGULAR from "./assets/icons/angular.svg";
+import BOOTSTRAP from "./assets/icons/bootstrap.svg";
+import NODE from "./assets/icons/node.svg";
+import MONGODB from "./assets/icons/mongodb.svg";
 
 function Skills({ skillsScrolled600px, skillsScrolled700px }) {
   const basicSkills = {
@@ -21,6 +24,7 @@ function Skills({ skillsScrolled600px, skillsScrolled700px }) {
       { name: "HTML", image: HTML, title: "HTML" },
       { name: "SEO", image: SEO },
       { name: "CSS", image: CSS, title: "CSS" },
+      { name: "SASS", image: SASS, title: "SASS" },
       { name: "TAILWINDCSS", image: TAILWINDCSS, title: "TAILWINDCSS" },
       { name: "JAVASCIPT", image: JAVASCRIPT, title: "JAVASCRIPT" },
       { name: "REACT", image: REACT, title: "REACT" },
@@ -35,11 +39,11 @@ function Skills({ skillsScrolled600px, skillsScrolled700px }) {
 
   const exploredSkills = {
     skills: [
-      { name: "Node.js", image: profile },
-      { name: "Next.js", image: htmlCloud },
-      { name: "Angular", image: profile },
-      { name: "TypeScript", image: htmlCloud },
-      { name: "GraphQL", image: profile },
+      { name: "BOOTSTRAP", image: BOOTSTRAP, title: "BOOTSTRAP" },
+      { name: "NEXT", image: NEXT, title: "NEXT" },
+      { name: "ANGULAR", image: ANGULAR, title: "ANGULAR" },
+      { name: "NODE", image: NODE, title: "NODE" },
+      { name: "MONGODB", image: MONGODB, title: "MONGODB" },
     ],
     reverse: true,
   };

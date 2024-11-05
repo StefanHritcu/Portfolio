@@ -17,6 +17,7 @@ import ANGULAR from "./assets/icons/angular.svg";
 import BOOTSTRAP from "./assets/icons/bootstrap.svg";
 import NODE from "./assets/icons/node.svg";
 import MONGODB from "./assets/icons/mongodb.svg";
+import DOCKER from "./assets/icons/docker.svg";
 
 function Skills({ skillsScrolled600px, skillsScrolled700px }) {
   const basicSkills = {
@@ -25,7 +26,7 @@ function Skills({ skillsScrolled600px, skillsScrolled700px }) {
       { name: "SEO", image: SEO },
       { name: "CSS", image: CSS, title: "CSS" },
       { name: "SASS", image: SASS, title: "SASS" },
-      { name: "TAILWINDCSS", image: TAILWINDCSS, title: "TAILWINDCSS" },
+      { name: "TAILWINDCSS", image: TAILWINDCSS, title: "TAILWIND CSS" },
       { name: "JAVASCIPT", image: JAVASCRIPT, title: "JAVASCRIPT" },
       { name: "REACT", image: REACT, title: "REACT" },
       { name: "TYPESCRIPT", image: TYPESCRIPT, title: "TYPESCRIPT" },
@@ -39,10 +40,11 @@ function Skills({ skillsScrolled600px, skillsScrolled700px }) {
 
   const exploredSkills = {
     skills: [
+      { name: "DOCKER", image: DOCKER, title: "DOCKER" },
       { name: "BOOTSTRAP", image: BOOTSTRAP, title: "BOOTSTRAP" },
-      { name: "NEXT", image: NEXT, title: "NEXT" },
+      { name: "NEXT", image: NEXT, title: "NEXT.JS" },
       { name: "ANGULAR", image: ANGULAR, title: "ANGULAR" },
-      { name: "NODE", image: NODE, title: "NODE" },
+      { name: "NODE", image: NODE, title: "NODE.JS" },
       { name: "MONGODB", image: MONGODB, title: "MONGODB" },
     ],
     reverse: true,

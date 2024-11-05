@@ -53,7 +53,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-primary-bg min-h-[2000px] h-auto">
+      <div className="bg-primary-bg min-h-[2000px] h-auto pb-20">
         <MainComponent
           isScrolledBis200px={isScrolledBis200px}
           isMounted={isMounted}

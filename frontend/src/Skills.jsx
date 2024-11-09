@@ -18,6 +18,7 @@ import BOOTSTRAP from "./assets/icons/bootstrap.svg";
 import NODE from "./assets/icons/node.svg";
 import MONGODB from "./assets/icons/mongodb.svg";
 import DOCKER from "./assets/icons/docker.svg";
+import SCRUM from "./assets/icons/scrum.svg";
 
 function Skills({ skillsScrolled600px, skillsScrolled700px }) {
   const basicSkills = {
@@ -41,6 +42,7 @@ function Skills({ skillsScrolled600px, skillsScrolled700px }) {
   const exploredSkills = {
     skills: [
       { name: "DOCKER", image: DOCKER, title: "DOCKER" },
+      { name: "SCRUM", image: SCRUM, title: "SCRUM" },
       { name: "BOOTSTRAP", image: BOOTSTRAP, title: "BOOTSTRAP" },
       { name: "NEXT", image: NEXT, title: "NEXT.JS" },
       { name: "ANGULAR", image: ANGULAR, title: "ANGULAR" },

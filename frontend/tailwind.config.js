@@ -17,7 +17,9 @@ export default {
         md: "767px",
         md2: "818px",
         md3: "870px",
+        md4: "940px",
         lg: "1024px",
+        lg2: "1100px",
 
         //only for cloud bobbles
         cloud1: "1100px",

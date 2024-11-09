@@ -1,13 +1,27 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { FaHeart } from "react-icons/fa";
 
 function InfoCard({ isScrolledBis500px, isScrolledBis200px }) {
   const [scrolled500px, setScrolled500px] = useState(isScrolledBis500px);
-  const [scrolled200px, setScrolled200px] = useState(isScrolledBis200px);
+  const [showHeart, setShowHeart] = useState(false);
 
   useEffect(() => {
     setScrolled500px(isScrolledBis500px);
   }, [isScrolledBis500px]);
+
+  // Alterna tra "Cologne" e l'icona del cuore ogni 5 secondi, mostrando il cuore per 0.5 secondi
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setShowHeart(true);
+      // Dopo 500ms, nasconde il cuore e mostra "Cologne" di nuovo
+      setTimeout(() => {
+        setShowHeart(false);
+      }, 500);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <motion.div
@@ -59,7 +73,31 @@ function InfoCard({ isScrolledBis500px, isScrolledBis200px }) {
             transition: { duration: 1 },
           }}
         >
-          based in <span className="text-red-400">Cologne</span>.
+          based in{" "}
+          {showHeart ? (
+            <motion.span
+              key="heart"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.25 }}
+              className="inline-block text-red-400"
+            >
+              <FaHeart />
+            </motion.span>
+          ) : (
+            <motion.span
+              key="cologne"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block text-red-400"
+            >
+              Cologne
+            </motion.span>
+          )}
+          .
         </motion.div>
       </div>
 

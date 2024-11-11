@@ -5,11 +5,15 @@ import Informations from "./Informations";
 import LastestWork from "./LastestWork";
 import GetInTouch from "./GetInTouch";
 
+import Rocket from "./assets/icons/rocket.svg";
+
 function App() {
   const [isScrolledBis200px, setIsScrolledBis200px] = useState(false);
   const [isScrolledBis500px, setIsScrolledBis500px] = useState(false);
   const [skillsScrolled600px, setskillsScrolled600px] = useState(false);
   const [skillsScrolled700px, setskillsScrolled700px] = useState(false);
+
+  const [rocketClickToTop, setRocketClickToTop] = useState(false);
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -19,6 +23,7 @@ function App() {
     setIsScrolledBis500px(scrollPosition > 320);
     setskillsScrolled600px(scrollPosition > 800);
     setskillsScrolled700px(scrollPosition > 650);
+    setRocketClickToTop(scrollPosition > 300 ? true : false);
     setIsProjectFixed(scrollPosition);
   };
   useEffect(() => {
@@ -53,22 +58,36 @@ function App() {
     console.log("Scrolled 700px status:", skillsScrolled700px);
   }, [skillsScrolled700px]);
 
+  useEffect(() => {
+    console.log("Scrolled 200px status for ROCKET:", rocketClickToTop);
+  }, [rocketClickToTop]);
+
   return (
     <>
-      <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
-        <MainComponent
-          isScrolledBis200px={isScrolledBis200px}
-          isMounted={isMounted}
-        />
-        <Informations
-          isScrolledBis500px={isScrolledBis500px}
-          isScrolledBis200px={isScrolledBis200px}
-          skillsScrolled600px={skillsScrolled600px}
-          skillsScrolled700px={skillsScrolled700px}
-        />
-        <LastestWork />
+      <div className="relative">
+        <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
+          <MainComponent
+            isScrolledBis200px={isScrolledBis200px}
+            isMounted={isMounted}
+          />
+          <Informations
+            isScrolledBis500px={isScrolledBis500px}
+            isScrolledBis200px={isScrolledBis200px}
+            skillsScrolled600px={skillsScrolled600px}
+            skillsScrolled700px={skillsScrolled700px}
+          />
+          <LastestWork />
 
-        <GetInTouch />
+          <GetInTouch />
+        </div>
+
+        <div
+          className={`fixed bottom-8 right-8 transform-transition duration-300 ${
+            rocketClickToTop ? "block" : "hidden"
+          }`}
+        >
+          <img src={Rocket} alt="Rocket image" className="w-16 h-16" />
+        </div>
       </div>
     </>
   );

@@ -27,6 +27,7 @@ function LastestWork() {
   return (
     <>
       <div
+        id="PROJECT"
         className={`my-10 sm:my-20 pb-20 mx-4 lg:mx-36 min-h-[400px] h-auto bg-second-border-padding ${
           isFixed ? "" : ""
         }`}

@@ -7,7 +7,8 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa";
-import { HiDocumentDownload } from "react-icons/hi";
+
+import PDF from "./assets/icons/pdf.svg";
 
 function GetInTouch() {
   const [showSmiley, setShowSmiley] = useState(false);
@@ -39,15 +40,9 @@ function GetInTouch() {
       >
         Get In{" "}
         <motion.span
-          animate={
-            showSmiley
-              ? { rotate: [-5, 0], opacity: [1, 0.7, 1] } // Rotazione leggera sinistra e ritorno
-              : {}
-          }
+          animate={showSmiley ? { rotate: [-5, 0], opacity: [1, 0.7, 1] } : {}}
           transition={
-            showSmiley
-              ? { duration: 1.5, delay: 1, ease: "easeInOut" } // Inizia dopo 1 secondo per la rotazione
-              : {}
+            showSmiley ? { duration: 1.5, delay: 1, ease: "easeInOut" } : {}
           }
         >
           {showSmiley ? "😊" : "Touch"}
@@ -56,16 +51,17 @@ function GetInTouch() {
 
       {/* Contenitore dei contatti */}
       <div className="flex flex-wrap justify-center gap-8">
-        {/* Animazione alternata per le icone */}
         {[
           {
             href: "https://www.linkedin.com",
+            target: "_blank",
             icon: <FaLinkedin size={40} />,
             color: "text-blue-600",
             delay: 0.2,
           },
           {
-            href: "https://www.github.com",
+            href: "https://github.com/StefanHritcu",
+            target: "_blank",
             icon: <FaGithub size={40} />,
             color: "text-gray-400",
             delay: 0.3,
@@ -89,8 +85,20 @@ function GetInTouch() {
             delay: 0.6,
           },
           {
-            href: "/path/to/curriculum-vitae.pdf",
-            icon: <HiDocumentDownload size={40} />,
+            href: "./../public/sviluppo-cv.pdf",
+            icon: (
+              <motion.img
+                src={PDF}
+                alt="PDF Icon"
+                style={{ width: "40px", height: "40px" }}
+                animate={{ scale: [1, 1.1, 1] }} // Effetto pulsazione
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            ),
             color: "text-purple-500",
             delay: 0.7,
             download: true,
@@ -105,7 +113,7 @@ function GetInTouch() {
             className={`${item.color} hover:scale-110 transition-transform`}
             initial={{
               opacity: 0,
-              x: index % 2 === 0 ? -50 : 50, // Alterna tra sinistra e destra
+              x: index % 2 === 0 ? -50 : 50,
             }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: item.delay }}

@@ -40,7 +40,7 @@ function MainComponent({ isScrolledBis200px, isMounted }) {
                 : "left-[30px] w-[0px] md:left-[80px] lg:left-[180px]"
             }`}
           >
-            <a href="#TODO" className="text-white text-center no-underline">
+            <a href="#PROJECT" className="text-white text-center no-underline">
               <h2 className="hover:text-red-100 text-2xl cursor-pointer font-light pt-[12px]">
                 Projects
               </h2>

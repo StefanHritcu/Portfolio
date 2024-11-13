@@ -11,6 +11,7 @@ import { animateScroll as scroll } from "react-scroll";
 import Rocket from "./assets/icons/rocket.png";
 import FireLeft from "./assets/icons/fire-left.png";
 import FireRight from "./assets/icons/fire-right.png";
+import SingleProjectComponent from "./components/SingleProjectComponent";
 
 function App() {
   const [isScrolledBis200px, setIsScrolledBis200px] = useState(false);
@@ -40,7 +41,7 @@ function App() {
     setIsScrolledBis500px(scrollPosition > 320);
     setskillsScrolled600px(scrollPosition > 800);
     setskillsScrolled700px(scrollPosition > 650);
-    setRocketClickToTop(scrollPosition > 300 ? true : false);
+    setRocketClickToTop(scrollPosition > 800 ? true : false);
   };
 
   useEffect(() => {
@@ -62,7 +63,7 @@ function App() {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative bg-primary-bg">
         <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
           <MainComponent isScrolledBis200px={isScrolledBis200px} />
           <Informations
@@ -119,6 +120,7 @@ function App() {
             </motion.div>
           )}
         </AnimatePresence>
+        <SingleProjectComponent />
       </div>
     </>
   );

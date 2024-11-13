@@ -136,6 +136,16 @@ function GetInTouch() {
         <p className="text-lg sm:text-xl text-secondary-color-text">
           Phone: +123 456 7890
         </p>
+        <div className="mt-20">
+          <p className="text-secondary-color-text">
+            Developed with <span className="text-red-500 font-bold">love</span>{" "}
+            by{" "}
+            <span className="font-bold text-[20px] text-text-primary px-1">
+              Ștefan-Florian Hrițcu
+            </span>{" "}
+            in November 2024
+          </p>
+        </div>
       </motion.div>
     </motion.div>
   );

@@ -22,6 +22,24 @@ function SingleProjectComponent() {
             ratione quis illo aperiam culpa.
           </p>
         </div>
+        {/* HASTAGS */}
+        <div className="max-w-[600px] flex flex-wrap items-center justify-start gap-2 mt-20">
+          <p className="w-[calc(33%-1rem)] text-center border-2 border-white rounded-lg py-2 text-text-primary text-md">
+            fordevsound
+          </p>
+          <p className="w-[calc(33%-1rem)] text-center border-2 border-white rounded-lg py-2 text-text-primary text-md">
+            non so piu
+          </p>
+          <p className="w-[calc(33%-1rem)] text-center border-2 border-white rounded-lg py-2 text-text-primary text-md">
+            okokokookko
+          </p>
+          <p className="w-[calc(33%-1rem)] text-center border-2 border-white rounded-lg py-2 text-text-primary text-md">
+            saniosainsa
+          </p>
+          <p className="w-[calc(33%-1rem)] text-center border-2 border-white rounded-lg py-2 text-text-primary text-md">
+            bracciano nuoiva
+          </p>
+        </div>
       </div>
     </>
   );

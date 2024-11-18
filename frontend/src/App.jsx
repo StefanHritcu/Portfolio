@@ -12,6 +12,7 @@ import Rocket from "./assets/icons/rocket.png";
 import FireLeft from "./assets/icons/fire-left.png";
 import FireRight from "./assets/icons/fire-right.png";
 import SingleProjectComponent from "./components/SingleProjectComponent";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [isScrolledBis200px, setIsScrolledBis200px] = useState(false);
@@ -63,7 +64,10 @@ function App() {
 
   return (
     <>
-      <div className="relative bg-primary-bg">
+      <Routes>
+        <Route path="/:id?" element={<SingleProjectComponent />} />
+      </Routes>
+      <div className="hidden relative bg-primary-bg">
         <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
           <MainComponent isScrolledBis200px={isScrolledBis200px} />
           <Informations
@@ -120,8 +124,8 @@ function App() {
             </motion.div>
           )}
         </AnimatePresence>
-        <SingleProjectComponent />
       </div>
+      <GetInTouch />
     </>
   );
 }

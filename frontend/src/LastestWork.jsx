@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./components/ProjectCard";
 import { Link } from "react-router-dom";
+import SingleProjectComponent from "./components/SingleProjectComponent";
 
-function LastestWork() {
+function LastestWork({ onSingleProjectClicked }) {
   const [isFixed, setIsFixed] = useState(false);
+
+  const handleSingleProjectClicked = () => {
+    onSingleProjectClicked(true);
+  };
 
   // Gestione dello scroll per il controllo dello stato `isFixed`
   const handleScroll = () => {
@@ -64,10 +69,11 @@ function LastestWork() {
       <div className="relative">
         {projects.map((project) => (
           <div
+            onClick={handleSingleProjectClicked}
             key={project.id}
             className="sticky top-40 md:top-56 z-40 transition-all transform duration-300"
           >
-            <Link key={project.id} to={`/${project.link}-${project.id}`}>
+            <Link key={project.id} to="/project">
               <ProjectCard title={project.title} link={project.link} />
             </Link>
           </div>

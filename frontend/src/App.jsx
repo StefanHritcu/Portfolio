@@ -24,6 +24,16 @@ function App() {
   const [rocketIsClicked, setRocketIsClicked] = useState(false);
   const [showFireLeft, setShowFireLeft] = useState(true);
 
+  const [showAppContent, setShowAppContent] = useState(true);
+
+  const handleSingleProjectClick = (clicked) => {
+    setShowAppContent(!clicked);
+
+    scroll.scrollToTop({
+      smooth: "easeInOutQuint",
+    });
+  };
+
   const handleRocket = () => {
     setRocketIsClicked(true);
 
@@ -64,21 +74,21 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/:id?" element={<SingleProjectComponent />} />
-      </Routes>
-      <div className="hidden relative bg-primary-bg">
-        <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
-          <MainComponent isScrolledBis200px={isScrolledBis200px} />
-          <Informations
-            isScrolledBis500px={isScrolledBis500px}
-            isScrolledBis200px={isScrolledBis200px}
-            skillsScrolled600px={skillsScrolled600px}
-            skillsScrolled700px={skillsScrolled700px}
-          />
-          <LastestWork />
-          <GetInTouch />
-        </div>
+      <div className="relative bg-primary-bg">
+        {/* Mostra o nasconde il contenuto principale in base a `showAppContent` */}
+        {showAppContent && (
+          <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
+            <MainComponent isScrolledBis200px={isScrolledBis200px} />
+            <Informations
+              isScrolledBis500px={isScrolledBis500px}
+              isScrolledBis200px={isScrolledBis200px}
+              skillsScrolled600px={skillsScrolled600px}
+              skillsScrolled700px={skillsScrolled700px}
+            />
+            <LastestWork onSingleProjectClicked={handleSingleProjectClick} />
+            <GetInTouch />
+          </div>
+        )}
 
         <AnimatePresence>
           {rocketClickToTop && !rocketIsClicked && (
@@ -125,7 +135,26 @@ function App() {
           )}
         </AnimatePresence>
       </div>
-      <GetInTouch />
+
+      {/* Rotte per i progetti */}
+      <Routes>
+        <Route path="project" element={<SingleProjectComponent />} />
+      </Routes>
+
+      {/* Mostra GetInTouch solo quando il contenuto principale è nascosto */}
+      <AnimatePresence>
+        {!showAppContent && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5 }}
+            className="bg-primary-bg"
+          >
+            <GetInTouch />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

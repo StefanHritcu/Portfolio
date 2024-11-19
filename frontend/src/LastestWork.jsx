@@ -42,15 +42,17 @@ function LastestWork({ onSingleProjectClicked }) {
     {
       id: 3,
       title: "Project 32121212121",
+      creationDate: "Februar 2024",
       link: "che-fai",
       description: "Description for Project 3",
       image: "image3.png",
     },
     {
       id: 4,
-      title: "Project 4",
-      link: "dajee",
-      description: "Description for Project 4",
+      title: "Games App",
+      creationDate: "Februar 2024",
+      description:
+        "Next.js project in Romanian with Tic Tac Toe & Connect 4, custom icons, leaderboard, and Redux state management.",
       image: "image4.png",
     },
   ];
@@ -73,8 +75,11 @@ function LastestWork({ onSingleProjectClicked }) {
             key={project.id}
             className="sticky top-40 md:top-56 z-40 transition-all transform duration-300"
           >
-            <Link key={project.id} to="/project">
-              <ProjectCard title={project.title} link={project.link} />
+            <Link key={project.id} to="/project" className="no-underline">
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+              />
             </Link>
           </div>
         ))}

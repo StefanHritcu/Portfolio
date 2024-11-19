@@ -1,7 +1,7 @@
 import { LuArrowUpRightSquare } from "react-icons/lu";
 import PROVACARDPROJECT from "./../assets/icons/prova-project-image-card.png";
 
-function ProjectCard({ title, link }) {
+function ProjectCard({ title, description }) {
   return (
     <>
       <section className="my-6 md:mx-14 lg:mx-20 lg2:mx-40 w-auto cursor-pointer hover:scale-105 transform-transition duration-1000">
@@ -9,8 +9,9 @@ function ProjectCard({ title, link }) {
           <h2 className="text-2xl lg:text-[36px]">{title}</h2>
           <LuArrowUpRightSquare className="text-3xl lg:text-[40px]" />
         </header>
-        <div className="bg-gray-600 h-[400px] rounded-b-2xl">
-          <img src={PROVACARDPROJECT} alt="prova image" />
+        <div className="bg-gray-600 h-[400px] rounded-b-2xl flex flex-col md:flex-row items-center">
+          <img src={PROVACARDPROJECT} alt="prova image" className="" />
+          <h3 className="text-text-primary">{description}</h3>
         </div>
       </section>
     </>

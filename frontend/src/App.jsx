@@ -28,7 +28,6 @@ function App() {
 
   const handleSingleProjectClick = (clicked) => {
     setShowAppContent(!clicked);
-
     scroll.scrollToTop({
       smooth: "easeInOutQuint",
     });
@@ -138,7 +137,14 @@ function App() {
 
       {/* Rotte per i progetti */}
       <Routes>
-        <Route path="project" element={<SingleProjectComponent />} />
+        <Route
+          path="project"
+          element={
+            <SingleProjectComponent
+              onBackToHome={() => handleSingleProjectClick(false)}
+            />
+          }
+        />
       </Routes>
 
       {/* Mostra GetInTouch solo quando il contenuto principale è nascosto */}

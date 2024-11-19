@@ -5,15 +5,16 @@ import image1 from "./../assets/projects-images/weatherTablet.png";
 import image2 from "./../assets/icons/html.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import { MdOutlineArrowBack } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-function SingleProjectComponent() {
+function SingleProjectComponent({ onBackToHome }) {
   return (
     <>
       <div className="relative">
         {/* BACK TO THE HOME BUTTON */}
-        <div className="absolute top-6 left-10">
+        <Link to="/" onClick={onBackToHome} className="absolute top-6 left-10">
           <MdOutlineArrowBack className="text-white w-12 h-12" />
-        </div>
+        </Link>
         <div className="bg-border-padding py-20 px-4">
           <div className="extraSmall:mx-8 sm:mx-10 md:mx-20 lg:mx-80 bg-second-border-padding min-h-[1400px] p-8 extraSmall:p-12 md:p-20">
             {/* TITLE OF THE PROJECT AND BUTTON/LINK "VISIT" */}

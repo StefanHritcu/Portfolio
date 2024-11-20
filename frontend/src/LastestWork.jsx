@@ -26,31 +26,50 @@ function LastestWork({ onSingleProjectClicked }) {
   // Array di progetti
   const projects = [
     {
-      id: 1,
-      title: "Project 112121",
-      link: "unbodaje",
-      description: "Description for Project 1",
+      id: 7,
+      title: "NEXT FIT TRACK",
+      description:
+        "Next.js app to track weight loss with ideal weight calculator, progress charts, and secure data storage via Supabase.",
       image: "image1.png",
     },
     {
-      id: 2,
-      title: "Project 2121",
-      link: "gfsdfgsd",
-      description: "Description for Project 2",
-      image: "image2.png",
+      id: 6,
+      title: "Italian Neighborhood Council",
+      description:
+        "Website for a local non-profit to promote community engagement, allowing article sharing with GitHub updates.",
+      image: "image1.png",
     },
     {
-      id: 3,
-      title: "Project 32121212121",
-      creationDate: "Februar 2024",
-      link: "che-fai",
-      description: "Description for Project 3",
-      image: "image3.png",
+      id: 5,
+      title: "React-Performance-Optimizer-App",
+      description:
+        "React app with a gallery featuring lazy loading, code splitting, manual chunking, and React Profiler for optimization.",
+      image: "image1.png",
     },
     {
       id: 4,
+      title: "OpenSoundHub",
+      description:
+        "Full-stack project with a backend programmer. I handled frontend development and managed frontend-backend data flow.",
+      image: "image1.png",
+    },
+    {
+      id: 3,
+      title: "WeatherApi",
+      description:
+        "A weather app using real-time data from OpenWeather API. Built with React and deployed on Netlify.",
+      image: "image2.png",
+    },
+    {
+      id: 2,
+      title: "MERN Restaurant reserevations",
+      description:
+        "A restaurant management app built with MERN stack: online reservations & staff dashboard for operations.",
+      image: "image3.png",
+    },
+    {
+      id: 1,
       title: "Games App",
-      creationDate: "Februar 2024",
       description:
         "Next.js project in Romanian with Tic Tac Toe & Connect 4, custom icons, leaderboard, and Redux state management.",
       image: "image4.png",

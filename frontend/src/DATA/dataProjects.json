@@ -1,0 +1,132 @@
+{
+  "dataProjects": [
+    {
+      "id": 1,
+      "title": "Game App",
+      "description": "GAMES Project created with Next.js in Romanian. The site includes two games: Tic Tac Toe and Connect 4, with features to create a custom icon and view a leaderboard with points. Redux is extensively used for state management and interactive functionalities.",
+      "createdDate": "February 2024",
+      "technology": ["Next.js", "Node.js", "Tailwind", "FIGMA", "Netlify"],
+      "deploy": "https://stefanhritcu.github.io/Games-site-REACT/",
+      "gitCodeSource": "https://github.com/StefanHritcu/Games-site-REACT",
+      "caseOfStudy": "Creating a user-friendly gaming experience with custom features and state management.",
+      "caseOfStudyInformation": [
+        "Built 2 games",
+        "Custom icons",
+        "Leaderboard",
+        "Redux mastery"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "MERN Restaurant Reservations",
+      "description": "An application for restaurant management developed using the MERN stack (MongoDB, Express.js, React, Node.js). Customers can make reservations online, while employees and the restaurant owner have access to a dashboard to manage reservations and other operational features.",
+      "createdDate": "May 2024",
+      "technology": ["React", "Redux", "Tailwind", "Node.js", "Express.js", "MongoDB", "Postman"],
+      "deploy": "https://ristorantemern.netlify.app/",
+      "gitCodeSource": "https://github.com/StefanHritcu/Progetto-Ristorante-Stack-MERN",
+      "caseOfStudy": "Streamlining restaurant operations with a user-friendly MERN application.",
+      "caseOfStudyInformation": [
+        "MERN stack",
+        "Online bookings",
+        "Admin dashboard",
+        "Database ops"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WeatherApi",
+      "description": "An application to display weather forecasts based on real-time data retrieved through the OpenWeather APIs.",
+      "createdDate": "July 2024",
+      "technology": ["React", "SEO", "SASS", "Tailwind"],
+      "deploy": "https://weather-api-by-hritcu.netlify.app/",
+      "gitCodeSource": "https://github.com/StefanHritcu/WeatherApi",
+      "caseOfStudy": "Delivering real-time weather updates with a visually appealing interface.",
+      "caseOfStudyInformation": [
+        "Real-time data",
+        "API integration",
+        "Responsive UI",
+        "Tailwind design"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "OpenSoundHub",
+      "description": "A full-stack project developed through online collaboration with a backend developer. I was responsible for the frontend development, focusing on building the website and tackling challenges related to the integration between the frontend and backend. I worked on understanding the type of data that needed to be exchanged between the two, overcoming these challenges through effective communication.",
+      "createdDate": "August 2024",
+      "technology": ["React", "SEO", "Tailwind", "Python"],
+      "deploy": "https://main--snazzy-dango-8024b2.netlify.app/",
+      "gitCodeSource": "https://github.com/StefanHritcu/OpenSoundHub-Collaborative-Full-Stack-Audio-Processing-Platform",
+      "caseOfStudy": "Collaborative full-stack audio platform with seamless frontend-backend integration.",
+      "caseOfStudyInformation": [
+        "Frontend-backend sync",
+        "Remote teamwork",
+        "Audio processing",
+        "Data exchange"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "React-Performance-Optimizer-App",
+      "description": "This React app features a sleek gallery designed to demonstrate advanced performance optimization techniques. With dynamic loading, it utilizes lazy loading, code splitting, and manual chunking to ensure a smooth user experience. The app also employs React Profiler for performance profiling, allowing for in-depth analysis and optimization opportunities.",
+      "createdDate": "October 2024",
+      "technology": ["React", "SEO", "Tailwind", "Lazy Loading", "Code Splitting", "React Profiler", "Manual Chunking"],
+      "deploy": "https://main--optimizerreactapp.netlify.app/",
+      "gitCodeSource": "https://github.com/StefanHritcu/React-Performance-Optimizer-App",
+      "caseOfStudy": "Optimizing React performance with advanced techniques.",
+      "caseOfStudyInformation": [
+        "Lazy loading",
+        "Code splitting",
+        "React Profiler",
+        "Smooth UX"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Italian Neighborhood Council",
+      "description": "A website created for a local non-profit organization aimed at fostering interaction and dialogue among residents of Bracciano Nuova. It allows sharing articles with photos and descriptions, promoting community engagement. Developed for free to enhance my portfolio as a Junior Frontend Developer and to gain positive recommendations through my contributions. Utilizing modern technologies for optimal performance. The site operates without a database to save costs. The site owner creates articles with images through a form. The content is converted into Markdown files and automatically pushed to GitHub. Netlify detects the push and regenerates the site with the new content. Articles are viewable online, leveraging the capabilities of static site generators like Hugo or Jekyll.",
+      "createdDate": "October 2024",
+      "technology": [
+        "React",
+        "SEO",
+        "Redux",
+        "Tailwind",
+        "Lazy Loading",
+        "Serverless Functions",
+        "Hugo/Jekyll"
+      ],
+      "deploy": "https://bracciano-nuova-cdq.netlify.app/",
+      "gitCodeSource": "https://github.com/StefanHritcu/Consiglio-di-Quartiere-Bracciano-Nuova",
+      "caseOfStudy": "Empowering local communities through static site technologies.",
+      "caseOfStudyInformation": [
+        "Markdown automation",
+        "Static site",
+        "Serverless ops",
+        "Community-driven"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "NEXT FIT TRACK",
+      "description": "This Next.js app helps users track their weight loss journey. It features an ideal weight calculator, daily weight input, and dynamic progress charts using Chart.js. With a serverless backend powered by Supabase, user data is securely stored and easily accessible. Advanced state management is handled by Redux for seamless updates.",
+      "createdDate": "mid-October 2024",
+      "technology": [
+        "Next.js",
+        "TypeScript",
+        "Redux",
+        "Tailwind",
+        "Chart.js",
+        "Lazy Loading",
+        "Supabase"
+      ],
+      "deploy": "https://bracciano-nuova-cdq.netlify.app/",
+      "gitCodeSource": "https://github.com/StefanHritcu/next-fit-track",
+      "caseOfStudy": "Enhancing fitness tracking with a user-centric Next.js app.",
+      "caseOfStudyInformation": [
+        "Weight tracking",
+        "Supabase backend",
+        "Progress charts",
+        "Redux state"
+      ]
+    }
+  ]
+}

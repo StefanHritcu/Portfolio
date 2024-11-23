@@ -76,7 +76,7 @@ function App() {
       <div className="relative bg-primary-bg">
         {/* Mostra o nasconde il contenuto principale in base a `showAppContent` */}
         {showAppContent && (
-          <div className="bg-primary-bg min-h-[4000px] h-auto pb-20">
+          <div className="bg-primary-bg min-h-[4000px] h-auto pb-4">
             <MainComponent isScrolledBis200px={isScrolledBis200px} />
             <Informations
               isScrolledBis500px={isScrolledBis500px}

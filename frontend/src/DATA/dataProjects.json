@@ -118,7 +118,8 @@
         "Lazy Loading",
         "Supabase"
       ],
-      "deploy": "https://bracciano-nuova-cdq.netlify.app/",
+      "youTubeVideo": "",
+      "deploy": "",
       "gitCodeSource": "https://github.com/StefanHritcu/next-fit-track",
       "caseOfStudy": "Enhancing fitness tracking with a user-centric Next.js app.",
       "caseOfStudyInformation": [

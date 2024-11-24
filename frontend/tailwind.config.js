@@ -7,11 +7,13 @@ export default {
         "primary-bg": "#1a1a1a",
         "border-padding": "#2b2b2b",
         "second-border-padding": "#1d1d1d",
+        "third-border-padding": "#0b0b0b",
         "text-primary": "#ffffff",
         "secondary-color-text": "#d1cfcf",
       },
       screens: {
         verySmall: "340px",
+        verySmall2: "362px",
         extraSmall: "400px",
         sm: "640px",
         md: "767px",

@@ -24,7 +24,7 @@ function ProjectCard({ title, description, star }) {
           <FaStar className="text-yellow-500 w-8 h-8" />
         </motion.div>
       )}
-      <header className="flex rounded-t-2xl justify-between p-6 bg-[#353535]">
+      <header className="flex rounded-t-2xl justify-between p-6 pb-3 -mb-1 bg-[#353535]">
         <h2 className="text-secondary-color-text ml-12 font-monospace font-semibold text-xl extraSmall:text-3xl md:text-[34px] lg:text-[46px]">
           {title}
         </h2>

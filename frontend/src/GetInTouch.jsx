@@ -26,6 +26,7 @@ function GetInTouch() {
 
   return (
     <motion.div
+      id="CONTACTME"
       className="flex flex-col items-center pt-12 bg-primary-bg text-text-primary px-6"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}

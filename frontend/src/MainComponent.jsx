@@ -48,9 +48,12 @@ function MainComponent({ isScrolledBis200px, isMounted }) {
           </div>
           {/* CONTACT ME */}
           <div className="w-[60px] h-[60px] hover:scale-105 duration-300 transition-transform cursor-pointer bg-border-padding mt-4 mr-8 sm:mr-10 md:mr-12 lg:mx-36 rounded-md flex items-center justify-center">
-            <div className="w-[28px] h-[28px] text-black border-2 rounded-md flex items-center justify-center">
+            <a
+              href="mailto:stefano.94h@gmail.com?subject=Hello&body=I%20have%20a%20question."
+              className="w-[28px] h-[28px] text-black border-2 rounded-md flex items-center justify-center"
+            >
               <FaMessage className="text-white" />
-            </div>
+            </a>
           </div>
         </motion.header>
         {/* END RESPONSIVE HEADER */}

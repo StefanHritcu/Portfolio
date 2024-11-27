@@ -131,10 +131,13 @@ export default function HomePage({ isScrolledBis200px, isMounted }) {
           transition={{ duration: 4.2 }}
           className="hidden md:block rounded-2xl border-secondary-color-text border-2 mr-12 lg:mr-36 hover:border-red-400 cursor-pointer hover:scale-105 transform-transition duration-300"
         >
-          <div className="px-4 pt-[12px] flex items-center justify-center">
+          <a
+            href="#CONTACTME"
+            className="px-4 pt-[12px] flex items-center justify-center decoration-transparent"
+          >
             <p className="text-secondary-color-text text-sm">Get in touch</p>
             <MdOutlineArrowRightAlt className="text-secondary-color-text ml-2 text-2xl mb-3" />
-          </div>
+          </a>
         </motion.div>
       </motion.section>
       {isVisible ? (

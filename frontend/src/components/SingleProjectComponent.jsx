@@ -22,6 +22,11 @@ import Id2Fourth from "./../assets/id-projects-images/id-2/id2-fourth.png";
 import Id2Fifth from "./../assets/id-projects-images/id-2/id2-fifth.png";
 
 //ID 3
+import Id3First from "./../assets/id-projects-images/id-3/id3-first.png";
+import Id3Second from "./../assets/id-projects-images/id-3/id3-second.png";
+import Id3Third from "./../assets/id-projects-images/id-2/id2-third.png";
+import Id3Fourth from "./../assets/id-projects-images/id-2/id2-fourth.png";
+import Id3Fifth from "./../assets/id-projects-images/id-2/id2-fifth.png";
 
 import { useEffect, useState } from "react";
 
@@ -220,7 +225,7 @@ function SingleProjectComponent({ onBackToHome }) {
                         alt="Netlify Icon"
                         className="w-12 h-12 mr-4"
                       />
-                      <span className="text-lg font-semibold text-[#333]">
+                      <span className="text-lg font-semibold text-[16px] md:text-xl  text-[#333]">
                         Explore the live version of the project hosted on
                         Netlify
                       </span>
@@ -245,7 +250,7 @@ function SingleProjectComponent({ onBackToHome }) {
                           alt="GitHub Icon"
                           className="w-12 h-12 mr-4"
                         />
-                        <span className="text-lg font-semibold text-gray-200">
+                        <span className="text-lg font-semibold text-gray-200 text-[16px] md:text-xl">
                           Explore the Code on GitHub
                         </span>
                       </Link>
@@ -354,7 +359,7 @@ function SingleProjectComponent({ onBackToHome }) {
                 <div className="flex flex-col items-center mt-10 text-text-primary">
                   {/* Descrizione del case study */}
                   <motion.p
-                    className="max-w-2xl text-center text-[18px] extraSmall:text-[22px] md:text-[28px] font-medium bg-border-padding p-6 rounded-lg shadow-lg"
+                    className="max-w-2xl text-center text-[14px] extraSmall:text-[22px] md:text-[28px] font-medium bg-border-padding p-6 rounded-lg shadow-lg"
                     variants={variants}
                     transition={{ duration: 1.2, delay: 0.3 }}
                   >

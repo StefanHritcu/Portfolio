@@ -24,9 +24,34 @@ import Id2Fifth from "./../assets/id-projects-images/id-2/id2-fifth.png";
 //ID 3
 import Id3First from "./../assets/id-projects-images/id-3/id3-first.png";
 import Id3Second from "./../assets/id-projects-images/id-3/id3-second.png";
-import Id3Third from "./../assets/id-projects-images/id-2/id2-third.png";
-import Id3Fourth from "./../assets/id-projects-images/id-2/id2-fourth.png";
-import Id3Fifth from "./../assets/id-projects-images/id-2/id2-fifth.png";
+import Id3Third from "./../assets/id-projects-images/id-3/id3-third.png";
+import Id3Fourth from "./../assets/id-projects-images/id-3/id3-fourth.png";
+import Id3Fifth from "./../assets/id-projects-images/id-3/id3-fifth.png";
+
+//ID 4
+import Id4First from "./../assets/id-projects-images/id-4/id4-first.png";
+import Id4Second from "./../assets/id-projects-images/id-1/id1-second.png";
+import Id4Third from "./../assets/id-projects-images/id-4/id4-third.png";
+import Id4Fourth from "./../assets/id-projects-images/id-4/id4-fourth.png";
+import Id4Fifth from "./../assets/id-projects-images/id-4/id4-fifth.png";
+
+//ID 5
+import id5First from "./../assets/id-projects-images/id-5/id5-first.png";
+import id5Second from "./../assets/id-projects-images/id-5/id5-second.png";
+
+//ID 6
+import Id6First from "./../assets/id-projects-images/id-6/id6-first.png";
+import Id6Second from "./../assets/id-projects-images/id-6/id6-second.png";
+import Id6Third from "./../assets/id-projects-images/id-6/id6-third.png";
+import Id6Fourth from "./../assets/id-projects-images/id-6/id6-fourth.png";
+import Id6Fifth from "./../assets/id-projects-images/id-6/id6-fifth.png";
+
+//ID 7
+import Id7First from "./../assets/id-projects-images/id-7/id7-first.png";
+import Id7Second from "./../assets/id-projects-images/id-7/id7-second.png";
+import Id7Third from "./../assets/id-projects-images/id-7/id7-third.png";
+import Id7Fourth from "./../assets/id-projects-images/id-7/id7-fourth.png";
+import Id7Fifth from "./../assets/id-projects-images/id-7/id7-fifth.png";
 
 import { useEffect, useState } from "react";
 

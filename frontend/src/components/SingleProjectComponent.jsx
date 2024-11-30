@@ -66,6 +66,15 @@ function SingleProjectComponent({ onBackToHome }) {
   const [scrollY, setScrollY] = useState(0);
   const location = useLocation();
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const closeAlbum = () => {
+    setIsOpen(false);
+    setCurrentCategory(null);
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsMainComponentVisible(true);
@@ -87,9 +96,9 @@ function SingleProjectComponent({ onBackToHome }) {
   }, []);
 
   const variants = {
-    hidden: { opacity: 0, x: "100%" },
+    hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: "-100%" },
+    exit: { opacity: 0, x: -200 },
   };
 
   useEffect(() => {
@@ -224,10 +233,10 @@ function SingleProjectComponent({ onBackToHome }) {
                 <ul className="space-y-4">
                   project.deploy && (
                   <motion.li
-                    initial={{ x: "-200%" }}
-                    animate={{ x: shouldAnimate ? 0 : "-200%" }}
+                    initial={{ x: "-300%" }}
+                    animate={{ x: shouldAnimate ? 0 : "-300%" }}
                     transition={{ duration: 1.5 }}
-                    className="relative"
+                    className="overflow-hidden"
                   >
                     <Link
                       to={project.deploy}
@@ -274,10 +283,11 @@ function SingleProjectComponent({ onBackToHome }) {
                       initial={{ x: "-300%" }}
                       animate={{ x: shouldAnimate ? 0 : "-300%" }}
                       transition={{ duration: 1 }}
+                      className="overflow-hidden"
                     >
                       <Link
                         to={project.gitCodeSource}
-                        className="flex items-center px-4 py-3 decoration-transparent bg-gradient-to-r from-[#181717] to-[#3b3a3a] rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transform transition-all duration-300"
+                        className="flex overflow-hidden items-center px-4 py-3 decoration-transparent bg-gradient-to-r from-[#181717] to-[#3b3a3a] rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-xl transform transition-all duration-300"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Explore the Code on GitHub"
@@ -295,9 +305,10 @@ function SingleProjectComponent({ onBackToHome }) {
                   )}
                   {project.youTubeVideo && (
                     <motion.li
-                      initial={{ x: "-100%" }}
-                      animate={{ x: shouldAnimate ? 0 : "-100%" }}
+                      initial={{ x: "-300%" }}
+                      animate={{ x: shouldAnimate ? 0 : "-300%" }}
                       transition={{ duration: 1.5 }}
+                      className="overflow-hidden"
                     >
                       <Link
                         to={project.youTubeVideo}
@@ -331,7 +342,7 @@ function SingleProjectComponent({ onBackToHome }) {
                 {images.length > 0 ? (
                   <>
                     {/* MAIN IMAGES */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gradient-to-r from-border-padding via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                    <div className="grid grid-cols-1 cursor-pointer sm:grid-cols-2 gap-6 bg-gradient-to-r from-border-padding via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
                       {images.slice(0, 2).map((img, index) => (
                         <div key={index} className="flex justify-center">
                           <img
@@ -340,18 +351,65 @@ function SingleProjectComponent({ onBackToHome }) {
                               index + 1
                             }`}
                             className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full max-w-[500px] object-cover"
+                            onClick={() => {
+                              setCurrentCategory({
+                                title: `Main Image ${index + 1}`,
+                                images: [
+                                  {
+                                    src: img,
+                                    alt: `Screenshot of project ${selectedProjectId} - view ${
+                                      index + 1
+                                    }`,
+                                  },
+                                ],
+                              });
+                              setCurrentIndex(0);
+                              setIsOpen(true);
+                            }}
                           />
                         </div>
                       ))}
                     </div>
 
+                    {/* Overlay for image */}
+                    {isOpen && currentCategory && (
+                      <div className="fixed bg-black bg-opacity-75 flex items-center justify-center z-50">
+                        <div className="relative">
+                          <button
+                            onClick={closeAlbum}
+                            className="absolute top-24 -right-10 text-white text-[60px]"
+                          >
+                            &times; {/* close */}
+                          </button>
+                          <img
+                            src={currentCategory.images[currentIndex].src}
+                            alt={currentCategory.images[currentIndex].alt}
+                            className="rounded-lg shadow-lg mt-32"
+                          />
+                        </div>
+                      </div>
+                    )}
+
                     {/* ARTISTIC MOBILE IMAGE */}
                     {images[4] && (
-                      <div className="flex flex-col lg:flex-row items-center justify-between bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                      <div className="flex flex-col cursor-pointer lg:flex-row items-center justify-between bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
                         <img
                           src={images[4]}
                           alt={`Artistic image of project ${selectedProjectId}`}
                           className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 max-w-full lg:max-w-[60%] mx-auto mb-6 lg:mb-0"
+                          onClick={() => {
+                            setCurrentCategory({
+                              title: `Artistic Image`,
+                              images: [
+                                {
+                                  src: images[4],
+                                  alt: `Artistic image of project ${selectedProjectId}`,
+                                },
+                              ],
+                            });
+                            setCurrentIndex(0);
+                            setIsOpen(true);
+                          }}
                         />
                         <div className="lg:w-[35%] text-center lg:text-left">
                           <h3 className="text-xl font-semibold text-text-primary">
@@ -364,17 +422,67 @@ function SingleProjectComponent({ onBackToHome }) {
                       </div>
                     )}
 
+                    {/* Overlay for image */}
+                    {isOpen && currentCategory && (
+                      <div className="fixed bg-black bg-opacity-75 flex items-center justify-center z-50">
+                        <div className="relative">
+                          <button
+                            onClick={closeAlbum}
+                            className="absolute top-24 -right-10 text-white text-[60px]"
+                          >
+                            &times; {/* close */}
+                          </button>
+                          <img
+                            src={currentCategory.images[currentIndex].src}
+                            alt={currentCategory.images[currentIndex].alt}
+                            className="rounded-lg shadow-lg"
+                          />
+                        </div>
+                      </div>
+                    )}
+
                     {/* MOBILE IMAGES */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
-                      {images.slice(1, 3).map((img, index) => (
+                    <div className="grid grid-cols-1 cursor-pointer md:grid-cols-2 gap-6 aspect-w-9 aspect-h-16 overflow-hidden bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                      {images.slice(2, 4).map((img, index) => (
                         <img
                           key={index}
                           src={img}
                           alt={`Mobile project image ${index + 1}`}
-                          className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full sm:w-[80%] lg:w-[60%] mx-auto"
+                          className="rounded-lg shadow-lg hover:shadow-2xl object-cover hover:scale-105 transition-transform duration-1000 w-full sm:w-[60%] lg:w-[50%] mx-auto"
+                          onClick={() => {
+                            setCurrentCategory({
+                              title: `Image ${index + 1}`,
+                              images: [
+                                {
+                                  src: img,
+                                  alt: `Mobile project image ${index + 1}`,
+                                },
+                              ],
+                            });
+                            setCurrentIndex(0);
+                            setIsOpen(true);
+                          }}
                         />
                       ))}
                     </div>
+
+                    {isOpen && currentCategory && (
+                      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 -top-36">
+                        <div className="relative">
+                          <button
+                            onClick={closeAlbum}
+                            className="absolute top-24 -right-10 text-white text-[60px]"
+                          >
+                            &times; {/* close */}
+                          </button>
+                          <img
+                            src={currentCategory.images[currentIndex].src}
+                            alt={currentCategory.images[currentIndex].alt}
+                            className="rounded-lg shadow-lg mt-32"
+                          />
+                        </div>
+                      </div>
+                    )}
                   </>
                 ) : (
                   // Fallback in caso di assenza di immagini

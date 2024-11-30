@@ -113,6 +113,18 @@ function SingleProjectComponent({ onBackToHome }) {
     (item) => item.id === selectedProjectId
   );
 
+  const projectImages = {
+    1: [Id1First, Id1Second, Id1Third, Id1Fourth, Id1Fifth],
+    2: [Id2First, Id2Second, Id2Third, Id2Fourth, Id2Fifth],
+    3: [Id3First, Id3Second, Id3Third, Id3Fourth, Id3Fifth],
+    4: [Id4First, Id4Second, Id4Third, Id4Fourth, Id4Fifth],
+    5: [id5First, id5Second],
+    6: [Id6First, Id6Second, Id6Third, Id6Fourth, Id6Fifth],
+    7: [Id7First, Id7Second, Id7Third, Id7Fourth, Id7Fifth],
+  };
+
+  const images = projectImages[selectedProjectId] || [];
+
   if (!project) {
     return (
       <main className="text-center mt-20 text-red-500 text-2xl">
@@ -307,7 +319,6 @@ function SingleProjectComponent({ onBackToHome }) {
                   )}
                 </ul>
               </nav>
-              {/* IMAGES */}
               <section
                 aria-labelledby="project-images"
                 className="my-20 mx-2 space-y-12"
@@ -315,55 +326,62 @@ function SingleProjectComponent({ onBackToHome }) {
                 <h2 id="project-images" className="sr-only">
                   Project Images
                 </h2>
-                {/* FIRST DIV: MAIN IMAGES */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gradient-to-r from-border-padding via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
-                  <div className="flex justify-center">
-                    <img
-                      src={Id1First}
-                      alt={`Screenshot of ${project.title} - main view`}
-                      className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full max-w-[500px] object-cover"
-                    />
-                  </div>
-                  <div className="flex justify-center">
-                    <img
-                      src={Id1Fourth}
-                      alt={`Screenshot of ${project.title} - additional view`}
-                      className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full max-w-[500px] object-cover"
-                    />
-                  </div>
-                </div>
 
-                {/* SECOND DIV: ARTISTIC MOBILE IMAGES */}
-                <div className="flex flex-col lg:flex-row items-center justify-between bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
-                  <img
-                    src={Id1Fifth}
-                    alt="Laptop image of the project"
-                    className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 max-w-full lg:max-w-[60%] mx-auto mb-6 lg:mb-0"
-                  />
-                  {/* Optionally you can add more content or images in this flex layout */}
-                  <div className="lg:w-[35%] text-center lg:text-left">
-                    <h3 className="text-xl font-semibold text-text-primary">
-                      Artistic Laptop View
-                    </h3>
-                    <p className="text-secondary-color-text">
-                      A creative representation of the project on laptop
-                    </p>
-                  </div>
-                </div>
+                {/* Controllo se ci sono immagini */}
+                {images.length > 0 ? (
+                  <>
+                    {/* MAIN IMAGES */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gradient-to-r from-border-padding via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                      {images.slice(0, 2).map((img, index) => (
+                        <div key={index} className="flex justify-center">
+                          <img
+                            src={img}
+                            alt={`Screenshot of project ${selectedProjectId} - view ${
+                              index + 1
+                            }`}
+                            className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full max-w-[500px] object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
 
-                {/* THIRD DIV: MOBILE DEVICE IMAGES */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
-                  <img
-                    src={Id1Second}
-                    alt="Mobile project image"
-                    className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full sm:w-[80%] lg:w-[60%] mx-auto"
-                  />
-                  <img
-                    src={Id1Third}
-                    alt="Mobile project image"
-                    className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full sm:w-[80%] lg:w-[60%] mx-auto"
-                  />
-                </div>
+                    {/* ARTISTIC MOBILE IMAGE */}
+                    {images[4] && (
+                      <div className="flex flex-col lg:flex-row items-center justify-between bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                        <img
+                          src={images[4]}
+                          alt={`Artistic image of project ${selectedProjectId}`}
+                          className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 max-w-full lg:max-w-[60%] mx-auto mb-6 lg:mb-0"
+                        />
+                        <div className="lg:w-[35%] text-center lg:text-left">
+                          <h3 className="text-xl font-semibold text-text-primary">
+                            Artistic Laptop View
+                          </h3>
+                          <p className="text-secondary-color-text">
+                            A creative representation of the project on a laptop
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* MOBILE IMAGES */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-r from-primary-bg via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                      {images.slice(1, 3).map((img, index) => (
+                        <img
+                          key={index}
+                          src={img}
+                          alt={`Mobile project image ${index + 1}`}
+                          className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full sm:w-[80%] lg:w-[60%] mx-auto"
+                        />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  // Fallback in caso di assenza di immagini
+                  <p className="text-center text-gray-500">
+                    No images available for this project.
+                  </p>
+                )}
               </section>
 
               {/* CASE STUDY */}

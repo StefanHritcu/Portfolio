@@ -222,7 +222,6 @@ function SingleProjectComponent({ onBackToHome }) {
               ))}
             </div>
           </section>
-          ---------------------------------------------------------------
           {isMainComponentVisible ? (
             <div>
               {/* LINKS LIKE GITHUB REPO, YOUTUBE PROJECT VIDEO DESCRIPTION */}
@@ -231,7 +230,6 @@ function SingleProjectComponent({ onBackToHome }) {
                   External Links
                 </h2>
                 <ul className="space-y-4">
-                  project.deploy && (
                   <motion.li
                     initial={{ x: "-300%" }}
                     animate={{ x: shouldAnimate ? 0 : "-300%" }}

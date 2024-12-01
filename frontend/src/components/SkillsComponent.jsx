@@ -24,7 +24,7 @@ function SkillsComponent({
       }}
       transition={{ duration: 1 }}
       exit={{ x: "100%", transition: { duration: 1 } }}
-      className={`lg:flex lg:justify-around lg:items-center mx-8 sm:mx-10 md:mx-12 lg:mx-36 bg-second-border-padding ${
+      className={`lg:flex lg:justify-around lg:items-center mx-2 sm:mx-4 md:mx-10 lg:mx-36 bg-second-border-padding ${
         reverse ? "flex-row-reverse" : ""
       }`}
     >

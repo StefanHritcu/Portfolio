@@ -25,10 +25,10 @@ function ProjectCard({ title, description, star }) {
         </motion.div>
       )}
       <header className="flex rounded-t-2xl justify-between p-6 pb-3 -mb-1 bg-[#353535]">
-        <h2 className="text-secondary-color-text ml-12 font-monospace font-semibold text-xl extraSmall:text-3xl md:text-[34px] lg:text-[46px]">
+        <h2 className="text-secondary-color-text ml-10 md:ml-12 font-monospace font-semibold text-xl extraSmall:text-3xl md:text-[34px] lg:text-[46px]">
           {title}
         </h2>
-        <LuArrowUpRightSquare className="text-3xl lg:text-[40px] text-red-300 hover:text-red-400" />
+        <LuArrowUpRightSquare className="min-w-10 min-h-10 pl-2 text-red-300 hover:text-red-400" />
       </header>
       <div className="bg-gray-600 rounded-b-2xl flex flex-col md:flex-row items-center">
         <img

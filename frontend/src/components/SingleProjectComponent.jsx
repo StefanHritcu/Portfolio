@@ -95,12 +95,6 @@ function SingleProjectComponent({ onBackToHome }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const variants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -200 },
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -160,13 +154,13 @@ function SingleProjectComponent({ onBackToHome }) {
           className="fixed top-6 left-10"
           aria-label="Go back to Home"
         >
-          <MdOutlineArrowBack className="text-white w-12 h-12" />
+          <MdOutlineArrowBack className="text-red-300 w-12 h-12 z-[200px]" />
         </Link>
       </header>
 
-      <main className="bg-border-padding py-20 px-4">
+      <main className="bg-border-padding py-20 px-2 md:px-4">
         <article
-          className="sm:mx-4 md:mx-12 md2:mx-20 md3:mx-32 md4:mx-52 bg-second-border-padding p-8 extraSmall:p-12 md:p-20"
+          className="mx-2 md:mx-10 md2:mx-20 md3:mx-32 md4:mx-52 bg-second-border-padding p-6 extraSmall:p-12 md:p-20"
           aria-labelledby="project-title"
         >
           {/* PROJECT TITLE */}
@@ -225,7 +219,7 @@ function SingleProjectComponent({ onBackToHome }) {
           {isMainComponentVisible ? (
             <div>
               {/* LINKS LIKE GITHUB REPO, YOUTUBE PROJECT VIDEO DESCRIPTION */}
-              <nav aria-labelledby="external-links" className="my-8">
+              <nav aria-labelledby="external-links" className="my-8 ">
                 <h2 id="external-links" className="sr-only">
                   External Links
                 </h2>
@@ -238,7 +232,7 @@ function SingleProjectComponent({ onBackToHome }) {
                   >
                     <Link
                       to={project.deploy}
-                      className="relative flex items-center px-4 py-3 rounded-lg shadow-md bg-gradient-to-r from-white to-[#046e66] decoration-transparent transform transition-all duration-300 hover:scale-105"
+                      className="relative flex items-center px-4 py-3 w-full rounded-lg shadow-md bg-gradient-to-r from-white to-[#046e66] decoration-transparent transform transition-all duration-300 hover:scale-105"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Explore the live version of the project hosted on Netlify"
@@ -275,7 +269,6 @@ function SingleProjectComponent({ onBackToHome }) {
                       </span>
                     </Link>
                   </motion.li>
-                  )
                   {project.gitCodeSource && (
                     <motion.li
                       initial={{ x: "-300%" }}
@@ -330,7 +323,7 @@ function SingleProjectComponent({ onBackToHome }) {
               </nav>
               <section
                 aria-labelledby="project-images"
-                className="my-20 mx-2 space-y-12"
+                className="my-20 space-y-12"
               >
                 <h2 id="project-images" className="sr-only">
                   Project Images
@@ -340,15 +333,18 @@ function SingleProjectComponent({ onBackToHome }) {
                 {images.length > 0 ? (
                   <>
                     {/* MAIN IMAGES */}
-                    <div className="grid grid-cols-1 cursor-pointer sm:grid-cols-2 gap-6 bg-gradient-to-r from-border-padding via-second-border-padding to-third-border-padding p-6 rounded-xl shadow-xl">
+                    <div className="relative grid grid-cols-1 cursor-pointer sm:grid-cols-2 gap-6 bg-gradient-to-r from-border-padding via-second-border-padding to-third-border-padding p-0 sm:p-4 md:p-6 rounded-xl shadow-xl">
+                      <p className="absolute top-2 px-4 left-4 md:left-10 text-red-400 text-[12px] md:text-lg">
+                        *Click on an image to view it in fullscreen and zoom in.
+                      </p>
                       {images.slice(0, 2).map((img, index) => (
-                        <div key={index} className="flex justify-center">
+                        <div key={index} className="flex justify-center mt-12">
                           <img
                             src={img}
                             alt={`Screenshot of project ${selectedProjectId} - view ${
                               index + 1
                             }`}
-                            className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full max-w-[500px] object-cover"
+                            className="rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 w-full object-cover max-w-full sm:max-w-[500px]"
                             onClick={() => {
                               setCurrentCategory({
                                 title: `Main Image ${index + 1}`,
@@ -491,14 +487,7 @@ function SingleProjectComponent({ onBackToHome }) {
               </section>
 
               {/* CASE STUDY */}
-              <motion.section
-                aria-labelledby="case-study"
-                className="mt-20 px-4"
-                initial="hidden"
-                animate={isVisible400px ? "visible" : "hidden"}
-                variants={variants}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              >
+              <section aria-labelledby="case-study" className="mt-20 px-4">
                 <h2
                   id="case-study"
                   className="text-center text-[32px] extraSmall:text-[46px] md:text-[80px] font-extrabold text-text-primary"
@@ -507,20 +496,12 @@ function SingleProjectComponent({ onBackToHome }) {
                 </h2>
                 <div className="flex flex-col items-center mt-10 text-text-primary">
                   {/* Descrizione del case study */}
-                  <motion.p
-                    className="max-w-2xl text-center text-[14px] extraSmall:text-[22px] md:text-[28px] font-medium bg-border-padding p-6 rounded-lg shadow-lg"
-                    variants={variants}
-                    transition={{ duration: 1.2, delay: 0.3 }}
-                  >
+                  <p className="max-w-2xl text-center text-[14px] extraSmall:text-[22px] md:text-[28px] font-medium bg-border-padding p-6 rounded-lg shadow-lg">
                     {project.caseOfStudy}
-                  </motion.p>
+                  </p>
 
                   {/* Tag informativi */}
-                  <motion.div
-                    className="flex flex-wrap justify-center gap-4 mt-8"
-                    variants={variants}
-                    transition={{ duration: 1.2, delay: 0.6 }}
-                  >
+                  <div className="flex flex-wrap justify-center gap-4 mt-8">
                     {project.caseOfStudyInformation.map((info, index) => (
                       <span
                         key={index}
@@ -529,9 +510,9 @@ function SingleProjectComponent({ onBackToHome }) {
                         {info}
                       </span>
                     ))}
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.section>
+              </section>
             </div>
           ) : (
             ""

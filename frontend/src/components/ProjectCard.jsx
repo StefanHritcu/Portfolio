@@ -1,10 +1,9 @@
 import { LuArrowUpRightSquare } from "react-icons/lu";
-import PROVACARDPROJECT from "./../assets/icons/prova-project-image-card.png";
 import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-function ProjectCard({ title, description, star }) {
+function ProjectCard({ title, description, star, image }) {
   // Stato per gestire il hover
   const [isHovered, setIsHovered] = useState(false);
 
@@ -30,12 +29,14 @@ function ProjectCard({ title, description, star }) {
         </h2>
         <LuArrowUpRightSquare className="min-w-10 min-h-10 pl-2 text-red-300 hover:text-red-400" />
       </header>
-      <div className="bg-gray-600 rounded-b-2xl flex flex-col md:flex-row items-center">
-        <img
-          src={PROVACARDPROJECT}
-          alt="prova image"
-          className="h-48 w-full object-cover md:w-1/2 md:h-60 lg:h-72 my-6"
-        />
+      <div className="bg-gray-600 rounded-b-2xl flex flex-col md:flex-row items-center p-4 md:p-6">
+        <div className="relative w-full md:w-1/2 overflow-hidden rounded-lg shadow-3xl">
+          <img
+            src={image}
+            alt="prova image"
+            className="h-48 w-full object-cover md:h-60 lg:h-72 transition-transform duration-300 ease-in-out transform hover:scale-105"
+          />
+        </div>
         <h3 className="hidden verySmall:block text-text-primary px-4 py-4 md:py-0 md:px-6 lg:mx-12 text-sm sm:text-base md:text-lg lg:text-xl">
           {description}
         </h3>

@@ -54,7 +54,7 @@ function GetInTouch() {
       <div className="flex flex-wrap justify-center gap-8">
         {[
           {
-            href: "https://www.linkedin.com",
+            href: "https://www.linkedin.com/in/stefan-florian-hritcu-ba615431b/",
             target: "_blank",
             icon: <FaLinkedin size={40} />,
             color: "text-blue-600",
@@ -68,19 +68,19 @@ function GetInTouch() {
             delay: 0.3,
           },
           {
-            href: "https://www.youtube.com",
+            href: "https://www.youtube.com/@ilpellegrinostefano.7216",
             icon: <FaYoutube size={40} />,
             color: "text-red-500",
             delay: 0.4,
           },
           {
-            href: "mailto:example@example.com",
+            href: "mailto:hritcustefanflorian@gmail.com",
             icon: <FaEnvelope size={40} />,
             color: "text-green-500",
             delay: 0.5,
           },
           {
-            href: "tel:+1234567890",
+            href: "0039 351 456 0948",
             icon: <FaPhone size={40} />,
             color: "text-yellow-400",
             delay: 0.6,
@@ -92,9 +92,9 @@ function GetInTouch() {
                 src={PDF}
                 alt="PDF Icon"
                 style={{ width: "40px", height: "40px" }}
-                animate={{ scale: [1, 1.1, 1] }} // Effetto pulsazione
+                animate={{ scale: [1, 1.4, 1] }}
                 transition={{
-                  duration: 1.5,
+                  duration: 2.5,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
@@ -132,10 +132,10 @@ function GetInTouch() {
         transition={{ duration: 0.7 }}
       >
         <p className="text-lg sm:text-xl mb-4 text-secondary-color-text">
-          Email: example@example.com
+          Email: hritcustefanflorian@gmail.com
         </p>
         <p className="text-lg sm:text-xl text-secondary-color-text">
-          Phone: +123 456 7890
+          Phone: 0039 351 456 0948
         </p>
         <div className="mt-20">
           <p className="text-secondary-color-text">

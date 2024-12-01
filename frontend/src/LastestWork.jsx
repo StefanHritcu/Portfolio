@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./components/ProjectCard";
 import { Link } from "react-router-dom";
-import SingleProjectComponent from "./components/SingleProjectComponent";
+import LatestWorkid1 from "./assets/lastestWork-images/lastest-word-id1.png";
+import LatestWorkid2 from "./assets/lastestWork-images/lastest-word-id2.png";
+import LatestWorkid3 from "./assets/lastestWork-images/lastest-word-id3.png";
+import LatestWorkid4 from "./assets/lastestWork-images/lastest-word-id4.png";
+import LatestWorkid5 from "./assets/lastestWork-images/lastest-word-id5.png";
+import LatestWorkid6 from "./assets/lastestWork-images/lastest-word-id6.png";
+import LatestWorkid7 from "./assets/lastestWork-images/lastest-word-id7.png";
 
 function LastestWork({ onSingleProjectClicked }) {
   const [isFixed, setIsFixed] = useState(false);
@@ -33,7 +39,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "Games App",
       description:
         "Next.js project in Romanian with Tic Tac Toe & Connect 4, custom icons, leaderboard, and Redux state management.",
-      image: "image4.png",
+      image: LatestWorkid1,
       star: false,
     },
     {
@@ -41,7 +47,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "MERN Restaurant reserevations",
       description:
         "A restaurant management app built with MERN stack: online reservations & staff dashboard for operations.",
-      image: "image3.png",
+      image: LatestWorkid2,
       star: true,
     },
     {
@@ -49,7 +55,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "WeatherApi",
       description:
         "A weather app using real-time data from OpenWeather API. Built with React and deployed on Netlify.",
-      image: "image2.png",
+      image: LatestWorkid3,
       star: true,
     },
     {
@@ -57,7 +63,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "OpenSoundHub",
       description:
         "Full-stack project with a backend programmer. I handled frontend development and managed frontend-backend data flow.",
-      image: "image1.png",
+      image: LatestWorkid4,
       star: false,
     },
     {
@@ -65,7 +71,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "React-Performance-Optimizer-App",
       description:
         "React app with a gallery featuring lazy loading, code splitting, manual chunking, and React Profiler for optimization.",
-      image: "image1.png",
+      image: LatestWorkid5,
       star: false,
     },
     {
@@ -73,7 +79,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "Italian Neighborhood Council",
       description:
         "Website for a local non-profit to promote community engagement, allowing article sharing with GitHub updates.",
-      image: "image1.png",
+      image: LatestWorkid6,
       star: true,
     },
     {
@@ -81,7 +87,7 @@ function LastestWork({ onSingleProjectClicked }) {
       title: "NEXT FIT TRACK",
       description:
         "Next.js app to track weight loss with ideal weight calculator, progress charts, and secure data storage via Supabase.",
-      image: "image1.png",
+      image: LatestWorkid7,
       star: false,
     },
   ];
@@ -114,6 +120,7 @@ function LastestWork({ onSingleProjectClicked }) {
                 title={project.title}
                 description={project.description}
                 star={project.star}
+                image={project.image}
               />
             </Link>
           </div>

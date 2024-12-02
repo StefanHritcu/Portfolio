@@ -364,23 +364,23 @@ function SingleProjectComponent({ onBackToHome }) {
                         </div>
                       ))}
                     </div>
-
-                    {/* Overlay for image */}
                     {isOpen && currentCategory && (
-                      <div className="fixed bg-black bg-opacity-75 flex items-center justify-center z-50">
-                        <div className="relative">
-                          <button
-                            onClick={closeAlbum}
-                            className="absolute top-24 -right-10 text-white text-[60px]"
-                          >
-                            &times; {/* close */}
-                          </button>
-                          <img
-                            src={currentCategory.images[currentIndex].src}
-                            alt={currentCategory.images[currentIndex].alt}
-                            className="rounded-lg shadow-lg mt-32"
-                          />
-                        </div>
+                      <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center h-screen justify-center z-50">
+                        {/* Pulsante di chiusura */}
+                        <button
+                          onClick={closeAlbum}
+                          className="fixed top-8 left-4 text-white text-[50px] sm:text-[60px] md:text-[70px] z-50"
+                          aria-label="Close Image"
+                        >
+                          &times; {/* close */}
+                        </button>
+
+                        {/* Immagine al centro */}
+                        <img
+                          src={currentCategory.images[currentIndex].src}
+                          alt={currentCategory.images[currentIndex].alt}
+                          className="rounded-lg shadow-lg max-w-[90%] max-h-[90%] object-contain"
+                        />
                       </div>
                     )}
 
@@ -416,22 +416,23 @@ function SingleProjectComponent({ onBackToHome }) {
                       </div>
                     )}
 
-                    {/* Overlay for image */}
                     {isOpen && currentCategory && (
-                      <div className="fixed bg-black bg-opacity-75 flex items-center justify-center z-50">
-                        <div className="relative">
-                          <button
-                            onClick={closeAlbum}
-                            className="absolute top-24 -right-10 text-white text-[60px]"
-                          >
-                            &times; {/* close */}
-                          </button>
-                          <img
-                            src={currentCategory.images[currentIndex].src}
-                            alt={currentCategory.images[currentIndex].alt}
-                            className="rounded-lg shadow-lg"
-                          />
-                        </div>
+                      <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center h-screen justify-center z-50">
+                        {/* Pulsante di chiusura */}
+                        <button
+                          onClick={closeAlbum}
+                          className="fixed top-8 left-4 text-white text-[50px] sm:text-[60px] md:text-[70px] z-50"
+                          aria-label="Close Image"
+                        >
+                          &times; {/* close */}
+                        </button>
+
+                        {/* Immagine al centro */}
+                        <img
+                          src={currentCategory.images[currentIndex].src}
+                          alt={currentCategory.images[currentIndex].alt}
+                          className="rounded-lg shadow-lg max-w-[90%] max-h-[90%] object-contain"
+                        />
                       </div>
                     )}
 
@@ -459,22 +460,23 @@ function SingleProjectComponent({ onBackToHome }) {
                         />
                       ))}
                     </div>
-
                     {isOpen && currentCategory && (
-                      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 -top-36">
-                        <div className="relative">
-                          <button
-                            onClick={closeAlbum}
-                            className="absolute top-24 -right-10 text-white text-[60px]"
-                          >
-                            &times; {/* close */}
-                          </button>
-                          <img
-                            src={currentCategory.images[currentIndex].src}
-                            alt={currentCategory.images[currentIndex].alt}
-                            className="rounded-lg shadow-lg mt-32"
-                          />
-                        </div>
+                      <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center h-screen justify-center z-50">
+                        {/* Pulsante di chiusura */}
+                        <button
+                          onClick={closeAlbum}
+                          className="fixed top-8 left-4 text-white text-[50px] sm:text-[60px] md:text-[70px] z-50"
+                          aria-label="Close Image"
+                        >
+                          &times; {/* close */}
+                        </button>
+
+                        {/* Immagine al centro */}
+                        <img
+                          src={currentCategory.images[currentIndex].src}
+                          alt={currentCategory.images[currentIndex].alt}
+                          className="rounded-lg shadow-lg max-w-[90%] max-h-[90%] object-contain"
+                        />
                       </div>
                     )}
                   </>
